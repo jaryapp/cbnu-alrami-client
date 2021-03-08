@@ -5,7 +5,7 @@ import Notice from '@src/components/Notice'
 import { ApolloProvider } from '@apollo/client'
 
 import { client } from '@src/apollo/client'
-import '@src/assets/base/base.css'
+import '@src/assets/style/base.css'
 
 ReactDOM.render(
   <ApolloProvider client={client}>
