@@ -25,7 +25,7 @@
 
     "@typescript-eslint/no-use-before-define": "warn", // 선언전에 사용시 경고
     "@typescript-eslint/no-shadow": "warn", // 상위 스코프에 동일 변수명이 있을경우 경고
-    // "@typescript-eslint/no-unused-vars": "warn", // 미사용 변수 경고
+    "@typescript-eslint/no-unused-vars": "off", // 미사용 변수 경고
     "jsx-a11y/anchor-is-valid": "off", // anchor에서 link onClick 허용
     "jsx-a11y/click-events-have-key-events": "off", // div에서 keyEvent 의무 X
     "jsx-a11y/no-static-element-interactions": "off", // div에서 onClick 허용
