@@ -5,7 +5,7 @@ import '@src/assets/style/__pallette.css'
 const Arrow = styled.div`
   border-radius: 0.7rem;
   padding: 10px;
-  background-color: var(--menu-gray);
+  background-color: var(--gray);
   font-size: 1rem;
   cursor: pointer;
 `

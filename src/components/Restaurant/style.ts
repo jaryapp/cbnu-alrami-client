@@ -1,0 +1,25 @@
+import styled from 'styled-components'
+import '@src/assets/style/__pallette.css'
+
+const Restaurant = styled.div`
+  .names {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    position: sticky;
+    top: 3.6rem;
+    background: #fff;
+
+    .arrow {
+      font-size: 2rem;
+      margin-left: 1rem;
+      margin-right: 0.5rem;
+      margin-top: 0.1rem;
+    }
+
+    .names::-webkit-scrollbar {
+      display: none !important;
+    }
+  }
+`
+export default Restaurant

@@ -4,7 +4,7 @@ import Name from './Name'
 import StyledSelector from './style'
 
 function Selector() {
-  const names = ['본관', '양성재', '양진재', '별빛식당', '은하수식당', '한빛식당']
+  const NAMES = ['본관', '양성재', '양진재', '별빛식당', '은하수식당', '한빛식당']
   return (
     <StyledSelector>
       <div className="date">
@@ -13,7 +13,7 @@ function Selector() {
         <Arrow direction="right" />
       </div>
       <div className="names">
-        {names.map(name => (
+        {NAMES.map(name => (
           <Name key={name} {...{ name }} />
         ))}
       </div>

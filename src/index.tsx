@@ -7,6 +7,7 @@ import 'dayjs/locale/ko'
 import Home from '@components/Home'
 import Notice from '@components/Notice'
 import Cafeteria from '@components/Cafeteria'
+import Restaurant from '@components/Restaurant'
 import { client } from '@src/apollo'
 import '@src/assets/style/base.css'
 
@@ -17,7 +18,8 @@ ReactDOM.render(
     <Router>
       <Route path="/" component={Home} exact />
       <Route path="/cafeteria" component={Cafeteria} />
-      <Route exact path="/notice" component={Notice}></Route>
+      <Route path="/restaurant" component={Restaurant} />
+      <Route path="/notice" component={Notice}></Route>
     </Router>
   </ApolloProvider>,
   document.getElementById('root'),
