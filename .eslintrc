@@ -34,6 +34,7 @@
     "react/no-danger": "off", // dangerouslySetInnerHTML 허용
     "react/no-array-index-key": "warn", // key로 index 사용시 경고
     "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off", // component에 props 전달시 {...props} 처럼 spread 형태 허용
     "react/self-closing-comp": "off",
     "import/order": "off", // import 순서 확인 안함
     "no-unneeded-ternary": "warn", // 불필요한 삼항연산자 경고
