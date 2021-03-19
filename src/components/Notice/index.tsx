@@ -1,4 +1,5 @@
 import Selector from './Selector'
+import NoticeCardList from './NoticeCardList'
 
 function Notice() {
   const sites = [
@@ -16,6 +17,7 @@ function Notice() {
   return (
     <>
       <Selector sites={sites} />
+      <NoticeCardList />
     </>
   )
 }
