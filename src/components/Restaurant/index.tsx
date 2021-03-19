@@ -2,6 +2,7 @@ import Dialog from '../shared/Dialog'
 import StyledRestaurant from './style'
 import Name from './Name'
 import Map from './Map'
+import Shop from './Shop'
 
 function Restaurant() {
   const NAMES = ['중문', '쪽문', '정문', '후문']
@@ -13,6 +14,18 @@ function Restaurant() {
         ))}
       </div>
       <Map />
+      <div className="shop-list">
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+        <Shop />
+      </div>
     </StyledRestaurant>
   )
 }
