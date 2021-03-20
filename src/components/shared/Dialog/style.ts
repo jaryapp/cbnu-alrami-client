@@ -3,32 +3,27 @@ import '@src/assets/style/__pallette.css'
 
 const Dialog = styled.div`
   .header {
-    display: flex;
-    justify-content: space-between;
     padding-top: 1rem;
-    padding-bottom: 0.6rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid gray;
     position: sticky;
     top: 0px;
     background: #fff;
     z-index: 1;
+    width: 100%;
+    text-align: center;
+
     .title {
       font-size: 1.2rem;
       font-weight: 600;
       margin-top: 0.3rem;
     }
 
-    .arrow,
-    .close {
-      font-size: 2rem;
-    }
-
     .arrow {
-      margin-left: 1rem;
-    }
-
-    .close {
-      margin-right: 1rem;
+      position: absolute;
+      font-size: 2rem;
+      left: 2px;
+      top: 15px;
     }
   }
 `

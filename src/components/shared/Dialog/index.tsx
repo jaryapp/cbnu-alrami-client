@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { BiChevronLeft } from 'react-icons/bi'
-import { IoIosClose } from 'react-icons/io'
+
 import StyledDialog from './style'
 
 interface DialogProps {
@@ -14,8 +15,7 @@ function Dialog({ title, ContentComponent }: DialogProps) {
       <StyledDialog>
         <div className="header">
           <BiChevronLeft className="arrow" />
-          <p className="title">{title}</p>
-          <IoIosClose className="close" />
+          <div className="title">{title}</div>
         </div>
         <ContentComponent />
       </StyledDialog>

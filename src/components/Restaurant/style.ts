@@ -7,9 +7,9 @@ const Restaurant = styled.div`
     justify-content: space-around;
     padding-top: 1rem;
     position: sticky;
-    top: 3.6rem;
-    background: #fff;
-
+    top: 3.55rem;
+    background-color: #fff;
+    z-index: 1;
     .arrow {
       font-size: 2rem;
       margin-left: 1rem;
