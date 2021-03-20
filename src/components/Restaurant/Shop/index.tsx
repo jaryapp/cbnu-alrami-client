@@ -1,4 +1,6 @@
 import StyledShop from './style'
+import { RiRestTimeLine } from 'react-icons/ri'
+import { BiTimeFive } from 'react-icons/bi'
 
 interface Menu {
   menu: string
@@ -18,10 +20,7 @@ interface RestaurantDetail {
 function Shop({ restaurant }: { restaurant: RestaurantDetail }) {
   return (
     <StyledShop>
-      <img
-        src="https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180130_263%2F1517301583613dwuaL_JPEG%2FZh5SeEjUT12rWxcLJ2nstPaB.jpg"
-        alt={restaurant.name}
-      />
+      <div className="img" />
       <div className="shop-info">
         <div className="title">{restaurant.name}</div>
         <div className="menu">
@@ -30,7 +29,12 @@ function Shop({ restaurant }: { restaurant: RestaurantDetail }) {
           ))}
         </div>
         <div className="time">
-          {restaurant.time} | 브레이크 타임 {restaurant.break}
+          <BiTimeFive className="icon" />
+          {restaurant.time}
+        </div>
+        <div className="break">
+          <RiRestTimeLine className="icon" />
+          {restaurant.break}
         </div>
       </div>
     </StyledShop>
