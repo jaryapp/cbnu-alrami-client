@@ -20,5 +20,14 @@ const Map = styled.div`
       top: -0.5rem;
     }
   }
+
+  .drawer {
+    position: fixed;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+  }
 `
 export default Map

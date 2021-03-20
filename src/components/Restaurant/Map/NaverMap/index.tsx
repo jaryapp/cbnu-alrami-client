@@ -1,5 +1,5 @@
 import { useQuery, gql } from '@apollo/client'
-import { useEffect } from 'react'
+import { useEffect, memo } from 'react'
 
 interface Menu {
   menu: string
@@ -20,6 +20,10 @@ interface RestaurantData {
   restaurants: RestaurantDetail[]
 }
 
+interface NaverMapProps {
+  onSelectRestaurant: Function
+}
+
 function makeMarker(map: naver.maps.Map, position: naver.maps.LatLng) {
   return new naver.maps.Marker({
     map,
@@ -27,7 +31,7 @@ function makeMarker(map: naver.maps.Map, position: naver.maps.LatLng) {
   })
 }
 
-function NaverMap({ onSelectRestaurant }: { onSelectRestaurant: Function }) {
+function NaverMap({ onSelectRestaurant }: NaverMapProps) {
   const GET_RESTAURANTS = gql`
     query getRestaurant {
       restaurants {
@@ -63,6 +67,7 @@ function NaverMap({ onSelectRestaurant }: { onSelectRestaurant: Function }) {
         naver.maps.Event.addListener(marker, 'click', e => {
           map.panTo(e.coord, { duration: 300, easing: 'easeOutCubic' })
           onSelectRestaurant(restaurant)
+          e.domEvent.stopPropagation()
         })
       })
       return map
@@ -73,4 +78,4 @@ function NaverMap({ onSelectRestaurant }: { onSelectRestaurant: Function }) {
   return <div id="map" style={mapStyle} />
 }
 
-export default NaverMap
+export default memo(NaverMap)
