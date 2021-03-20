@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client'
 import Dialog from '../shared/Dialog'
 import StyledRestaurant from './style'
 import Name from './Name'
-import Map from './Map'
+import MapDialog from './Map'
 import Shop from './Shop'
 import { GET_LOCATION_STATE } from '@src/apollo/quries'
 
@@ -41,11 +41,16 @@ const GET_RESTAURANT = gql`
 `
 
 function Restaurant() {
-  const NAMES = ['중문', '쪽문', '정문', '후문']
+  const NAMES = ['중문', '정문', '후문', '쪽문', '서문']
   const { data: locationData } = useQuery(GET_LOCATION_STATE)
   const { data } = useQuery<RestaurantData>(GET_RESTAURANT, {
     variables: { location: locationData.resturantName },
   })
+
+  let openDialog: Function
+  const openCallback = (cb: Function) => {
+    openDialog = cb
+  }
 
   return (
     <StyledRestaurant>
@@ -54,12 +59,15 @@ function Restaurant() {
           <Name key={name} {...{ name }} />
         ))}
       </div>
-      <Map />
+      <div onClick={() => openDialog()}>
+        <img src="/img/map.png" alt="지도" width="100%" />
+      </div>
       <div className="shop-list">
         {data?.restaurants.map(restaurant => (
           <Shop key={restaurant.name} {...{ restaurant }} />
         ))}
       </div>
+      <MapDialog {...{ openCallback }} />
     </StyledRestaurant>
   )
 }

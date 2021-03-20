@@ -8,6 +8,7 @@ const Dialog = styled.div`
   right: 0px;
   bottom: 0px;
   background-color: white;
+  z-index: 1;
   .header {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -15,7 +16,6 @@ const Dialog = styled.div`
     position: sticky;
     top: 0px;
     background: #fff;
-    z-index: 1;
     width: 100%;
     text-align: center;
 

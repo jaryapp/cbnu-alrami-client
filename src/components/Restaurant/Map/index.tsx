@@ -1,11 +1,25 @@
+import Dialog from '../../shared/Dialog'
+import { IoArrowBackOutline } from 'react-icons/io5'
 import StyledMap from './style'
+import NaverMap from './NaverMap'
 
-function Map() {
+interface MapProps {
+  closeDialog: Function
+}
+
+function Map({ closeDialog }: MapProps) {
+  const onSelectRestaurant = () => {
+    console.log(onSelectRestaurant)
+  }
+
   return (
     <StyledMap>
-      <img src="/img/map.png" alt="지도" width="100%" />
+      <div className="back" onClick={() => closeDialog()}>
+        <IoArrowBackOutline className="icon-back" />
+      </div>
+      <NaverMap {...{ onSelectRestaurant }} />
     </StyledMap>
   )
 }
 
-export default Map
+export default Dialog({ ContentComponent: Map })
