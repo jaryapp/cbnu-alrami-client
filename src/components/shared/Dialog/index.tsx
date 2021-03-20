@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useCallback } from 'react'
 import { BiChevronLeft } from 'react-icons/bi'
 
 import StyledDialog from './style'
@@ -10,11 +9,22 @@ interface DialogProps {
 }
 
 function Dialog({ title, ContentComponent }: DialogProps) {
-  function EnhancedComponent() {
+  const EnhancedComponent = ({ openCallback }: { openCallback: Function }) => {
+    const [open, setOpen] = useState(false)
+    const closeDialog = useCallback(() => {
+      setOpen(false)
+    }, [])
+    const openDialog = useCallback(() => {
+      setOpen(true)
+    }, [])
+    openCallback(openDialog)
+
+    if (!open) return <></>
+
     return (
       <StyledDialog>
         <div className="header">
-          <BiChevronLeft className="arrow" />
+          <BiChevronLeft className="arrow" onClick={closeDialog} />
           <div className="title">{title}</div>
         </div>
         <ContentComponent />

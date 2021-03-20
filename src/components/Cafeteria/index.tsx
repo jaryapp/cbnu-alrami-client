@@ -1,21 +1,25 @@
 import { BiChevronRight } from 'react-icons/bi'
-import { Link } from 'react-router-dom'
 
 import MenuList from './MenuList'
 import Selector from './Selector'
 import StyledCafeteria from './style'
+import RestaurantDialog from '../Restaurant'
 
 function Cafeteria() {
+  let openDialog: Function
+  const openCallback = (cb: Function) => {
+    openDialog = cb
+  }
+
   return (
     <StyledCafeteria>
       <Selector />
       <MenuList />
-      <Link to="/restaurant">
-        <div className="nearby">
-          학교 주변 맛집 보러가기
-          <BiChevronRight className="arrow" />
-        </div>
-      </Link>
+      <div className="nearby" onClick={() => openDialog()}>
+        학교 주변 맛집 보러가기
+        <BiChevronRight className="arrow" />
+      </div>
+      <RestaurantDialog {...{ openCallback }} />
     </StyledCafeteria>
   )
 }
