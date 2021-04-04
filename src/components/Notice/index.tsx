@@ -1,5 +1,8 @@
+import { VscMegaphone } from 'react-icons/vsc'
+
 import Selector from './Selector'
 import NoticeCardList from './NoticeCardList'
+import FloatingButton from './FloatingButton'
 
 function Notice() {
   const sites = [
@@ -18,6 +21,7 @@ function Notice() {
     <>
       <Selector sites={sites} />
       <NoticeCardList />
+      <FloatingButton ContentIcon={VscMegaphone} />
     </>
   )
 }
