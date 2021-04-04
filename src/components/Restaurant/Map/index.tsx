@@ -3,6 +3,7 @@ import Dialog from '../../shared/Dialog'
 import { IoArrowBackOutline } from 'react-icons/io5'
 import StyledMap from './style'
 import NaverMap from './NaverMap'
+import Drawer from './Drawer'
 
 interface MapProps {
   closeDialog: Function
@@ -12,12 +13,12 @@ interface Menu {
   price: number
 }
 interface RestaurantDetail {
-  address?: string
+  address: string
   location: string
-  longitude?: number
-  latitude?: number
+  longitude: number
+  latitude: number
   name: string
-  details?: Menu[]
+  details: Menu[]
   time: string
   break: string
 }
@@ -25,7 +26,6 @@ interface RestaurantDetail {
 function Map({ closeDialog }: MapProps) {
   const [restaurantInfo, setRestaurantInfo] = useState<RestaurantDetail>()
   const [drawerState, setDrawerState] = useState(false)
-
   const onSelectRestaurant = useCallback(
     (restaurant: RestaurantDetail) => {
       setRestaurantInfo(restaurant)
@@ -46,7 +46,7 @@ function Map({ closeDialog }: MapProps) {
       <div onClick={handleDrawer}>
         <NaverMap {...{ onSelectRestaurant }} />
       </div>
-      {drawerState && <div className="drawer">{restaurantInfo?.name}</div>}
+      {drawerState && <Drawer detail={restaurantInfo} />}
     </StyledMap>
   )
 }

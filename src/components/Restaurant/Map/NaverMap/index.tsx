@@ -40,6 +40,7 @@ function NaverMap({ onSelectRestaurant }: NaverMapProps) {
           menu
           price
         }
+        address
         longitude
         latitude
         time

@@ -21,13 +21,6 @@ const Map = styled.div`
     }
   }
 
-  .drawer {
-    position: fixed;
-    bottom: 0;
-    height: 10rem;
-    width: 100%;
-    z-index: 1000;
-    background: #fff;
-  }
+ 
 `
 export default Map

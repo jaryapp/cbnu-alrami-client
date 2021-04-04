@@ -11,7 +11,7 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "extends": ["airbnb-typescript", "airbnb/hooks", "prettier"],
+  "extends": ["airbnb-typescript", "prettier"],
   "rules": {
     "@typescript-eslint/semi": "off", // 세미콜론 확인 X
     "@typescript-eslint/naming-convention": [
