@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/client'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ko'
@@ -8,17 +8,20 @@ import Home from '@components/Home'
 import Notice from '@components/Notice'
 import Cafeteria from '@components/Cafeteria'
 import { client } from '@src/apollo'
-import '@src/assets/style/base.css'
+import { GlobalStyle } from '@src/assets/style/globalStyle'
 
 dayjs.locale('ko')
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <Route path="/" component={Home} exact />
-      <Route path="/cafeteria" component={Cafeteria} />
-      <Route path="/notice" component={Notice}></Route>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/cafeteria" component={Cafeteria} />
+        <Route path="/notice" component={Notice} />
+      </Switch>
     </Router>
+    <GlobalStyle />
   </ApolloProvider>,
   document.getElementById('root'),
 )

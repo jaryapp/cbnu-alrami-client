@@ -1,12 +1,12 @@
 import { useReactiveVar } from '@apollo/client'
 
-import dayjs from 'dayjs'
 import StyledDate from './style'
 import { dateVar } from '@src/apollo/cache'
+import { fullFormatDate } from '@src/utils/day'
 
 function Date() {
   const date = useReactiveVar(dateVar)
-  return <StyledDate>{dayjs(date).format('YYYY년 MM월 DD일 (ddd)')}</StyledDate>
+  return <StyledDate>{fullFormatDate(date)}</StyledDate>
 }
 
 export default Date

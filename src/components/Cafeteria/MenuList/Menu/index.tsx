@@ -1,6 +1,10 @@
 import StyledMenu from './style'
 
-function Menu({ menu }: { menu: string }) {
+interface MenuProps {
+  menu: string
+}
+
+function Menu({ menu }: MenuProps) {
   return <StyledMenu>{menu}</StyledMenu>
 }
 
