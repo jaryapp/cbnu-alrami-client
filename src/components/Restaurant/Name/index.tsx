@@ -3,7 +3,11 @@ import { useReactiveVar } from '@apollo/client'
 import StyledName from './style'
 import { resturantNameVar } from '@src/apollo/cache'
 
-function Name({ name }: { name: string }) {
+interface NameProps {
+  name: string
+}
+
+function Name({ name }: NameProps) {
   const resturantName = useReactiveVar(resturantNameVar)
   const active = resturantName === name
   const handleName = () => {
@@ -11,7 +15,7 @@ function Name({ name }: { name: string }) {
   }
 
   return (
-    <StyledName onClick={handleName} className={active ? 'active' : ''}>
+    <StyledName onClick={handleName} className={active ? 'active' : undefined}>
       {name}
     </StyledName>
   )

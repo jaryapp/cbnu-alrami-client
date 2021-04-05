@@ -1,32 +1,15 @@
 import StyledDrawer from './style'
+import { RestaurantDetail } from '@components/Restaurant'
 
-interface Menu {
-  menu: string
-  price: number
-}
-
-interface RestaurantDetail {
-  address: string
-  location: string
-  longitude: number
-  latitude: number
-  name: string
-  details: Menu[]
-  time: string
-  break: string
-}
-
-function Drawer({ detail }: { detail: RestaurantDetail | undefined }) {
+function Drawer({ restaurant }: { restaurant: RestaurantDetail }) {
   return (
     <StyledDrawer>
-      <div className="drawer">
-        <div className="photo" />
-        <div className="info">
-          <div className="name">{detail?.name}</div>
-          <div className="address">{detail?.address}</div>
-          <div className="menu">
-            {detail?.details[0].menu} {detail?.details[0].price}
-          </div>
+      <div className="photo" />
+      <div className="info">
+        <div className="name">{restaurant.name}</div>
+        <div className="address">{restaurant.address}</div>
+        <div className="menu">
+          {restaurant.details[0].menu} {restaurant.details[0].price}
         </div>
       </div>
     </StyledDrawer>

@@ -1,51 +1,47 @@
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
 import Dialog from '../shared/Dialog'
 import StyledRestaurant from './style'
 import Name from './Name'
 import MapDialog from './Map'
 import Shop from './Shop'
-import { GET_LOCATION_STATE } from '@src/apollo/quries'
+import Loading from '@components/shared/Loading'
+import { RestaurantNames } from '@src/constants'
+import { GET_LOCATION_STATE, GET_RESTAURANTS } from '@src/apollo/quries'
 
-interface Menu {
+export interface Menu {
   menu: string
   price: number
 }
-interface RestaurantDetail {
-  address?: string
+export interface RestaurantDetail {
+  address: string
   location: string
   longitude?: number
   latitude?: number
   name: string
-  details?: Menu[]
+  details: Menu[]
   time: string
   break: string
 }
 
-interface RestaurantData {
+export interface RestaurantData {
   restaurants: RestaurantDetail[]
 }
 
-const GET_RESTAURANT = gql`
-  query getRestaurant($location: String!) {
-    restaurants(location: $location) {
-      name
-      details {
-        menu
-        price
-      }
-      time
-      break
-    }
-  }
-`
-
 function Restaurant() {
-  const NAMES = ['중문', '정문', '후문', '쪽문', '서문']
-  const { data: locationData } = useQuery(GET_LOCATION_STATE)
-  const { data } = useQuery<RestaurantData>(GET_RESTAURANT, {
-    variables: { location: locationData.resturantName },
+  const NAMES = [
+    RestaurantNames.Main,
+    RestaurantNames.Middle,
+    RestaurantNames.Back,
+    RestaurantNames.Side,
+    RestaurantNames.West,
+  ]
+  const { data: location } = useQuery(GET_LOCATION_STATE)
+  const { loading, data: restaurants } = useQuery<RestaurantData>(GET_RESTAURANTS, {
+    variables: { location: location.resturantName },
   })
+
+  if (loading || !restaurants) return <Loading />
 
   let openDialog: Function
   const openCallback = (cb: Function) => {
@@ -63,7 +59,7 @@ function Restaurant() {
         <img src="/img/map.png" alt="지도" width="100%" />
       </div>
       <div className="shop-list">
-        {data?.restaurants.map(restaurant => (
+        {restaurants.restaurants.map(restaurant => (
           <Shop key={restaurant.name} {...{ restaurant }} />
         ))}
       </div>

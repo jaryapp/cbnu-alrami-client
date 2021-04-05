@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 
 import Time from './Time'
 import Menu from './Menu'
-import MenuEmpty from '@components/MenuEmpty'
+import MenuEmpty from '@src/components/Cafeteria/MenuList/MenuEmpty'
 import Loading from '@components/shared/Loading'
 import { GET_CAFETERIA_NAME_STATE, GET_DATE_STATE, GET_MENU } from '@src/apollo/quries'
 

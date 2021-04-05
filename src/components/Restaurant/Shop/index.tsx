@@ -1,30 +1,20 @@
 import StyledShop from './style'
 import { RiRestTimeLine } from 'react-icons/ri'
 import { BiTimeFive } from 'react-icons/bi'
+import { RestaurantDetail } from '@components/Restaurant'
 
-interface Menu {
-  menu: string
-  price: number
-}
-interface RestaurantDetail {
-  address?: string
-  location: string
-  longitude?: number
-  latitude?: number
-  name: string
-  details?: Menu[]
-  time: string
-  break: string
+interface ShopProps {
+  restaurant: RestaurantDetail
 }
 
-function Shop({ restaurant }: { restaurant: RestaurantDetail }) {
+function Shop({ restaurant }: ShopProps) {
   return (
     <StyledShop>
       <div className="img" />
       <div className="shop-info">
         <div className="title">{restaurant.name}</div>
         <div className="menu">
-          {restaurant.details?.map(detail => (
+          {restaurant.details.map(detail => (
             <>{`${detail.menu} ${detail.price} `}</>
           ))}
         </div>
