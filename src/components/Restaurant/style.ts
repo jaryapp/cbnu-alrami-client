@@ -10,6 +10,7 @@ const Restaurant = styled.div`
     top: 3.55rem;
     background-color: #fff;
     z-index: 1;
+    
     .arrow {
       font-size: 2rem;
       margin-left: 1rem;

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-
 import '@src/assets/style/__pallette.css'
 
 const Date = styled.div`
@@ -8,6 +7,6 @@ const Date = styled.div`
   align-items: center;
   border-radius: 0.7rem;
   width: 65%;
-  background-color: var(--menu-gray);
+  background-color: var(--gray);
 `
 export default Date

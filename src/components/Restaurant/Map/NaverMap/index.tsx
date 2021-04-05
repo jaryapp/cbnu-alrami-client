@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import { useEffect, memo } from 'react'
 
 import { RestaurantData } from '@components/Restaurant'
-import { GET_RESTAURANTS } from '@src/apollo/quries'
+import { GET_ALL_RESTAURANTS } from '@src/apollo/quries'
 import Loading from '@components/shared/Loading'
 
 interface NaverMapProps {
@@ -20,9 +20,7 @@ function NaverMap({ onSelectRestaurant }: NaverMapProps) {
   const CBNU_LATITUDE = 36.62903849870408
   const CBNU_LONGITUDE = 127.45635082700974
 
-  const { data: restaurants, loading } = useQuery<RestaurantData>(GET_RESTAURANTS)
-
-  if (loading || !restaurants) return <Loading />
+  const { data: restaurants, loading } = useQuery<RestaurantData>(GET_ALL_RESTAURANTS)
 
   const mapStyle = {
     width: '100vw',
@@ -30,6 +28,7 @@ function NaverMap({ onSelectRestaurant }: NaverMapProps) {
   }
 
   useEffect(() => {
+    if (!restaurants) return
     const initMap = () => {
       const map = new naver.maps.Map('map', {
         center: new naver.maps.LatLng(CBNU_LATITUDE, CBNU_LONGITUDE),
@@ -46,7 +45,9 @@ function NaverMap({ onSelectRestaurant }: NaverMapProps) {
       return map
     }
     initMap()
-  }, [restaurants.restaurants, onSelectRestaurant])
+  }, [restaurants, onSelectRestaurant])
+
+  if (loading || !restaurants) return <Loading />
 
   return <div id="map" style={mapStyle} />
 }

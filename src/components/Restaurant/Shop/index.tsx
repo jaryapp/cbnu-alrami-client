@@ -10,14 +10,15 @@ interface ShopProps {
 function Shop({ restaurant }: ShopProps) {
   return (
     <StyledShop>
-      <div className="img" />
+      <picture>
+        <img
+          src="https://search.pstatic.net/common/?autoRotate=true&quality=95&type=w750&src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20180130_263%2F1517301583613dwuaL_JPEG%2FZh5SeEjUT12rWxcLJ2nstPaB.jpg"
+          alt="상점"
+        />
+      </picture>
       <div className="shop-info">
         <div className="title">{restaurant.name}</div>
-        <div className="menu">
-          {restaurant.details.map(detail => (
-            <>{`${detail.menu} ${detail.price} `}</>
-          ))}
-        </div>
+        <div className="menu">{`${restaurant.details[0].menu} ${restaurant.details[0].price} ${restaurant.details[1].menu} ${restaurant.details[1].price}`}</div>
         <div className="time">
           <BiTimeFive className="icon" />
           {restaurant.time}

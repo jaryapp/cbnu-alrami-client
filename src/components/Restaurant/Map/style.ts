@@ -12,6 +12,7 @@ const Map = styled.div`
     margin-top: 0.5rem;
     margin-left: 0.5rem;
     z-index: 1;
+    font-size: 3rem;
 
     .icon-back {
       position: relative;
@@ -20,7 +21,5 @@ const Map = styled.div`
       top: -0.5rem;
     }
   }
-
- 
 `
 export default Map

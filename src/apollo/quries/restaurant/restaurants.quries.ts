@@ -13,3 +13,21 @@ export const GET_RESTAURANTS = gql`
     }
   }
 `
+
+export const GET_ALL_RESTAURANTS = gql`
+  query getAllRestaurants {
+    restaurants {
+      address
+      location
+      longitude
+      latitude
+      name
+      details {
+        menu
+        price
+      }
+      time
+      break
+    }
+  }
+`

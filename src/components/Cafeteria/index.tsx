@@ -1,7 +1,6 @@
-import { BiChevronRight } from 'react-icons/bi'
-
 import MenuList from './MenuList'
 import Selector from './Selector'
+import Floating from './Floating'
 import StyledCafeteria from './style'
 import RestaurantDialog from '../Restaurant'
 
@@ -16,8 +15,7 @@ function Cafeteria() {
       <Selector />
       <MenuList />
       <div className="nearby" onClick={() => openDialog()}>
-        학교 주변 맛집 보러가기
-        <BiChevronRight className="arrow" />
+        <Floating />
       </div>
       <RestaurantDialog {...{ openCallback }} />
     </StyledCafeteria>

@@ -59,7 +59,7 @@ function Restaurant() {
         <img src="/img/map.png" alt="지도" width="100%" />
       </div>
       <div className="shop-list">
-        {restaurants.restaurants.map(restaurant => (
+        {restaurants?.restaurants.map(restaurant => (
           <Shop key={restaurant.name} {...{ restaurant }} />
         ))}
       </div>
