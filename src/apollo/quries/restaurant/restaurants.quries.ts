@@ -4,6 +4,8 @@ export const GET_RESTAURANTS_BY_LOCATION = gql`
   query getRestaurantsByLocation($location: String!) {
     restaurants(location: $location) {
       name
+      address
+      location
       details {
         menu
         price
