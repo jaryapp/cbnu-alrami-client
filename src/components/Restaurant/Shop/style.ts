@@ -28,12 +28,12 @@ const Shop = styled.div`
 
     .title {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-bottom: 0.3rem;
     }
 
     .menu {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin-bottom: 0.3rem;
     }
 
