@@ -7,7 +7,7 @@ import MapDialog from './Map'
 import Shop from './Shop'
 import Loading from '@components/shared/Loading'
 import { RestaurantNames } from '@src/constants'
-import { GET_LOCATION_STATE, GET_RESTAURANTS } from '@src/apollo/quries'
+import { GET_LOCATION_STATE, GET_RESTAURANTS_BY_LOCATION } from '@src/apollo/quries'
 
 export interface Menu {
   menu: string
@@ -37,7 +37,7 @@ function Restaurant() {
     RestaurantNames.West,
   ]
   const { data: location } = useQuery(GET_LOCATION_STATE)
-  const { loading, data: restaurants } = useQuery<RestaurantData>(GET_RESTAURANTS, {
+  const { loading, data: restaurants } = useQuery<RestaurantData>(GET_RESTAURANTS_BY_LOCATION, {
     variables: { location: location.resturantLocationName },
   })
 

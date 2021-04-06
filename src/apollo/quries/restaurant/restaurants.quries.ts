@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
 
-export const GET_RESTAURANTS = gql`
+export const GET_RESTAURANTS_BY_LOCATION = gql`
   query getRestaurants($location: String!) {
     restaurants(location: $location) {
       name
