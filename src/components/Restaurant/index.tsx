@@ -44,7 +44,7 @@ function Restaurant() {
   if (loading || !restaurants) return <Loading />
 
   let openDialog: Function
-  const openCallback = (cb: Function) => {
+  const mapOpenCallback = (cb: Function) => {
     openDialog = cb
   }
 
@@ -59,11 +59,11 @@ function Restaurant() {
         <img src="/img/map.png" alt="지도" width="100%" />
       </div>
       <div className="shop-list">
-        {restaurants?.restaurants.map(restaurant => (
+        {restaurants.restaurants.map(restaurant => (
           <Shop key={restaurant.name} {...{ restaurant }} />
         ))}
       </div>
-      <MapDialog {...{ openCallback }} />
+      <MapDialog openCallback={mapOpenCallback} />
     </StyledRestaurant>
   )
 }

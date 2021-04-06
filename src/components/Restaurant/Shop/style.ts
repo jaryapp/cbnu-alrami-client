@@ -10,14 +10,16 @@ const Shop = styled.div`
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
 
-  img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0.2rem;
-    margin-left: 1rem;
-    margin-top: 0.4rem;
-    align-self: center;
-    object-fit: cover;
+  picture {
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.2rem;
+      margin-left: 1rem;
+      margin-top: 0.4rem;
+      align-self: center;
+      object-fit: cover;
+    }
   }
 
   .shop-info {

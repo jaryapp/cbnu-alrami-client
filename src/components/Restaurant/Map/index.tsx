@@ -27,7 +27,7 @@ function Map({ closeDialog }: MapProps) {
 
   return (
     <StyledMap>
-      <div className="back" onClick={() => closeDialog()}>
+      <div className="back" onClick={e => closeDialog(e)}>
         <IoArrowBackOutline className="icon-back" />
       </div>
       <div onClick={handleDrawer}>
