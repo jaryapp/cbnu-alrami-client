@@ -2,16 +2,14 @@ import Dialog from '../../shared/Dialog'
 import StyledDetail from './style'
 import { RestaurantDetail } from '@components/Restaurant'
 import { BiChevronLeft } from 'react-icons/bi'
-import Loading from '@components/shared/Loading'
 
 interface DetailProps {
-  closeDialog: Function
-  restaurant?: RestaurantDetail
+  restaurant: RestaurantDetail
+  openCallback: Function
 }
 
-function Detail({ closeDialog, restaurant }: DetailProps) {
-  if (!restaurant) return <Loading />
-  return (
+function Detail({ restaurant, openCallback }: DetailProps) {
+  const ContentComponent = ({ closeDialog }: { closeDialog: Function }) => (
     <StyledDetail>
       <div className="header">
         <BiChevronLeft className="arrow" onClick={e => closeDialog(e)} />
@@ -19,6 +17,8 @@ function Detail({ closeDialog, restaurant }: DetailProps) {
       </div>
     </StyledDetail>
   )
+
+  return Dialog({ ContentComponent })({ openCallback })
 }
 
-export default Dialog({ ContentComponent: Detail })
+export default Detail

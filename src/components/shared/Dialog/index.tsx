@@ -1,21 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { BiChevronLeft } from 'react-icons/bi'
-import { RestaurantDetail } from '@components/Restaurant'
 
 import StyledDialog from './style'
 
 interface DialogProps {
   title?: string
-  ContentComponent: React.FC<{ restaurant?: RestaurantDetail; closeDialog: Function }>
+  ContentComponent: React.FC<{ closeDialog: Function }>
 }
 
 interface EnhancedComponentProps {
-  restaurant?: RestaurantDetail
   openCallback: Function
 }
 
 function Dialog({ title, ContentComponent }: DialogProps) {
-  const EnhancedComponent = ({ restaurant, openCallback }: EnhancedComponentProps) => {
+  const EnhancedComponent = ({ openCallback }: EnhancedComponentProps) => {
     const [open, setOpen] = useState(false)
 
     const closeDialog = useCallback(
@@ -43,7 +41,7 @@ function Dialog({ title, ContentComponent }: DialogProps) {
             <div className="title">{title}</div>
           </div>
         )}
-        <ContentComponent {...{ restaurant, closeDialog }} />
+        <ContentComponent {...{ closeDialog }} />
       </StyledDialog>
     )
   }

@@ -36,7 +36,7 @@ function Shop({ restaurant }: ShopProps) {
           {restaurant.break}
         </div>
       </div>
-      <RestaurantDetailDialog restaurant={restaurant} openCallback={restaurantOpenCallback} />
+      <RestaurantDetailDialog {...{ restaurant }} openCallback={restaurantOpenCallback} />
     </StyledShop>
   )
 }
