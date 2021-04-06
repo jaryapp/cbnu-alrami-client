@@ -3,12 +3,12 @@ import '@src/assets/style/__pallette.css'
 
 const Name = styled.div`
   border-radius: 0.7rem;
-  padding: 10px;
+  padding: 0.5rem;
   background-color: var(--gray);
   box-shadow: var(--menu-box-shadow);
   font-size: 0.9rem;
   cursor: pointer;
-  min-width: 20%;
+  min-width: 19%;
   display: flex;
   justify-content: center;
   margin-right: 1rem;
