@@ -38,7 +38,7 @@ function Restaurant() {
   ]
   const { data: location } = useQuery(GET_LOCATION_STATE)
   const { loading, data: restaurants } = useQuery<RestaurantData>(GET_RESTAURANTS, {
-    variables: { location: location.resturantName },
+    variables: { location: location.resturantLocationName },
   })
 
   if (loading || !restaurants) return <Loading />

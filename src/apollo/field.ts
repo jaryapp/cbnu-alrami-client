@@ -1,4 +1,4 @@
-import { dateVar, cafeteriaNameVar,resturantNameVar } from './cache'
+import { dateVar, cafeteriaNameVar,resturantLocationNameVar } from './cache'
 
 export const date = {
   read() {
@@ -12,8 +12,8 @@ export const cafeteriaName = {
   },
 }
 
-export const resturantName = {
+export const resturantLocationName = {
   read() {
-    return resturantNameVar()
+    return resturantLocationNameVar()
   },
 }

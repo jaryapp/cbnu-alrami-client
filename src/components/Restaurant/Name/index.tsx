@@ -1,17 +1,17 @@
 import { useReactiveVar } from '@apollo/client'
 
 import StyledName from './style'
-import { resturantNameVar } from '@src/apollo/cache'
+import { resturantLocationNameVar } from '@src/apollo/cache'
 
 interface NameProps {
   name: string
 }
 
 function Name({ name }: NameProps) {
-  const resturantName = useReactiveVar(resturantNameVar)
-  const active = resturantName === name
+  const resturantLocationName = useReactiveVar(resturantLocationNameVar)
+  const active = resturantLocationName === name
   const handleName = () => {
-    resturantNameVar(name)
+    resturantLocationNameVar(name)
   }
 
   return (
