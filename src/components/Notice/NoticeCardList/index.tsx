@@ -1,4 +1,4 @@
-import { NoticeCardListWrapper } from './style'
+import StyledNoticeCardList  from './style'
 import NoticeCard from './NoticeCard'
 
 function NoticeCardList() {
@@ -19,11 +19,11 @@ function NoticeCardList() {
     },
   ]
   return (
-    <NoticeCardListWrapper>
+    <StyledNoticeCardList>
       {notices.map(notice => (
         <NoticeCard key={notice.notice_id} {...notice} />
       ))}
-    </NoticeCardListWrapper>
+    </StyledNoticeCardList>
   )
 }
 
