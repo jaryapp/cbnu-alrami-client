@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const GET_RESTAURANTS_BY_LOCATION = gql`
-  query getRestaurants($location: String!) {
+  query getRestaurantsByLocation($location: String!) {
     restaurants(location: $location) {
       name
       details {

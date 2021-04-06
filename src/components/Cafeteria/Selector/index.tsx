@@ -2,9 +2,18 @@ import Arrow from './Arrow'
 import Date from './Date'
 import Name from './Name'
 import StyledSelector from './style'
+import { CafeteriaNames } from '@src/constants'
 
 function Selector() {
-  const NAMES = ['본관', '양성재', '양진재', '별빛식당', '은하수식당', '한빛식당']
+  const NAMES = [
+    CafeteriaNames.Main,
+    CafeteriaNames.YangSeong,
+    CafeteriaNames.YangJin,
+    CafeteriaNames.Star,
+    CafeteriaNames.MilkWay,
+    CafeteriaNames.Hanbit,
+  ]
+  
   return (
     <StyledSelector>
       <div className="date">

@@ -6,7 +6,7 @@ import Name from './Name'
 import MapDialog from './Map'
 import Shop from './Shop'
 import Loading from '@components/shared/Loading'
-import { RestaurantNames } from '@src/constants'
+import { RestaurantLocationNames } from '@src/constants'
 import { GET_LOCATION_STATE, GET_RESTAURANTS_BY_LOCATION } from '@src/apollo/quries'
 
 export interface Menu {
@@ -30,11 +30,11 @@ export interface RestaurantData {
 
 function Restaurant() {
   const NAMES = [
-    RestaurantNames.Main,
-    RestaurantNames.Middle,
-    RestaurantNames.Back,
-    RestaurantNames.Side,
-    RestaurantNames.West,
+    RestaurantLocationNames.Main,
+    RestaurantLocationNames.Middle,
+    RestaurantLocationNames.Back,
+    RestaurantLocationNames.Side,
+    RestaurantLocationNames.West,
   ]
   const { data: location } = useQuery(GET_LOCATION_STATE)
   const { loading, data: restaurants } = useQuery<RestaurantData>(GET_RESTAURANTS_BY_LOCATION, {
