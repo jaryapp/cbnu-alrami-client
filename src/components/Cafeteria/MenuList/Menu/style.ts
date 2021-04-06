@@ -4,7 +4,7 @@ import '@src/assets/style/__pallette.css'
 
 const Menu = styled.div`
   font-size: 0.8rem;
-  background-color: var(--menu-gray);
+  background-color: var(--gray);
   box-shadow: var(--menu-box-shadow);
   border-radius: 0.7rem;
   padding: 15px;

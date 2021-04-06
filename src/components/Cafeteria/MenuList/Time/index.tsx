@@ -1,6 +1,10 @@
 import StyledTime from './style'
 
-function Time({ timezone }: { timezone: string }) {
+interface TimeProps {
+  timezone: string
+}
+
+function Time({ timezone }: TimeProps) {
   return <StyledTime>{timezone}</StyledTime>
 }
 

@@ -7,6 +7,7 @@ const MenuEmpty = styled.div`
   justify-content: center;
   flex-direction: column;
   margin-top: 100px;
+  
   img {
     height: 200px;
   }
