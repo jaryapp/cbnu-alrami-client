@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const Selector = styled.div`
   display: flex column;
   font-size: 1rem;
-  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 
   .date {
