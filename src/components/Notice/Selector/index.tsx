@@ -1,4 +1,4 @@
-import { SelectorWrapper } from './style'
+import StyledSelector from './style'
 
 interface Site {
   id: number
@@ -11,11 +11,11 @@ interface SelectorProps {
 
 function Selector({ sites }: SelectorProps) {
   return (
-    <SelectorWrapper>
+    <StyledSelector>
       {sites.map(site => (
         <li key={site.id}>{site.name}</li>
       ))}
-    </SelectorWrapper>
+    </StyledSelector>
   )
 }
 

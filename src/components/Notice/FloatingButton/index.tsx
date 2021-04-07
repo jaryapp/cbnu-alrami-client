@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons'
-import { FloatingWrapper } from './style'
+import StyledFloatingButton from './style'
 
 interface FloatingButtonProps {
   ContentIcon: IconType
@@ -7,9 +7,9 @@ interface FloatingButtonProps {
 
 function FloatingButton({ ContentIcon }: FloatingButtonProps) {
   return (
-    <FloatingWrapper>
+    <StyledFloatingButton>
       <ContentIcon />
-    </FloatingWrapper>
+    </StyledFloatingButton>
   )
 }
 

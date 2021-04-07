@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import '@src/assets/style/__pallette.css'
 
-export const FloatingWrapper = styled.div`
+const FloatingButton = styled.div`
   position: fixed;
   display: flex;
   border-radius: 50%;
@@ -17,3 +17,5 @@ export const FloatingWrapper = styled.div`
   font-size: 1.7rem;
   cursor: pointer;
 `
+
+export default FloatingButton

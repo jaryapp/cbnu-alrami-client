@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import '@src/assets/style/__pallette.css'
 
-export const NoticeCardWrapper = styled.div`
+const NoticeCard = styled.div`
   border: 1px solid var(--notice-gray-300);
   border-radius: 0.5rem;
   padding: 0.7rem;
@@ -20,9 +20,11 @@ export const NoticeCardWrapper = styled.div`
       content: '|';
       margin: 0 0.15rem;
     }
-    
+
     .date {
       margin-left: auto;
     }
   }
 `
+
+export default NoticeCard

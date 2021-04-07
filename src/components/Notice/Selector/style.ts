@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import '@src/assets/style/__pallette.css'
 
-export const SelectorWrapper = styled.ul`
+const Selector = styled.ul`
   display: flex;
   overflow-x: auto;
   padding: 0.5em;
@@ -17,3 +17,5 @@ export const SelectorWrapper = styled.ul`
     color: var(--black-500);
   }
 `
+
+export default Selector
