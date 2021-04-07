@@ -6,7 +6,7 @@ function NoticeCardList() {
   return (
     <StyledNoticeCardList>
       {notices.map(notice => (
-        <NoticeCard key={notice.notice_id} {...notice} />
+        <NoticeCard key={notice.noticeId} {...notice} />
       ))}
     </StyledNoticeCardList>
   )

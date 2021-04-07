@@ -4,11 +4,11 @@ import notices from '@src/__mocks/notices'
 import Dialog from '@components/shared/Dialog'
 
 interface NoticeDetailProps {
-  notice_id: number
+  noticeId: number
   openCallback: Function
 }
 
-function NoticeDetail({ notice_id, openCallback }: NoticeDetailProps) {
+function NoticeDetail({ noticeId, openCallback }: NoticeDetailProps) {
   const notice = notices[0]
   const ContentComponent = ({ closeDialog }: { closeDialog: Function }) => (
     <StyledDetail>

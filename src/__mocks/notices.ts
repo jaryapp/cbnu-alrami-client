@@ -1,6 +1,6 @@
 export default [
   {
-    notice_id: 100,
+    noticeId: 100,
     depart: '소프트웨어학과',
     type: '공지사항',
     title: '[안내] 2021학년도 하기 계절수업 운영 계획 안내',
@@ -9,7 +9,7 @@ export default [
     url: 'https://sw7up.cbnu.ac.kr/community/notice/606bb6b6f7b9274da64e870a',
   },
   {
-    notice_id: 101,
+    noticeId: 101,
     depart: '소프트웨어학과',
     type: '공지사항',
     title: '[안내] 2021학년도 하기 계절수업 운영 계획 안내',

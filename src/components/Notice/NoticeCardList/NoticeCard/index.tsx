@@ -2,14 +2,14 @@ import StyledNoticeCard from './style'
 import NoticeDetail from '../../NoticeDetail'
 
 export interface NoticeCardProps {
-  notice_id: number
+  noticeId: number
   title: string
   depart: string
   type: string
   date: string
 }
 
-function NoticeCard({ notice_id, title, depart, type, date }: NoticeCardProps) {
+function NoticeCard({ noticeId, title, depart, type, date }: NoticeCardProps) {
   let openDialog: Function
 
   const openCallbackDetailDialog = (cb: Function) => {
@@ -30,7 +30,7 @@ function NoticeCard({ notice_id, title, depart, type, date }: NoticeCardProps) {
           <div className="date">{date}</div>
         </div>
       </StyledNoticeCard>
-      <NoticeDetail notice_id={notice_id} openCallback={openCallbackDetailDialog} />
+      <NoticeDetail {...{ noticeId, openCallback: openCallbackDetailDialog }} />
     </>
   )
 }

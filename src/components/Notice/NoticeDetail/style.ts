@@ -26,6 +26,7 @@ const NoticeDetail = styled.div`
 
       img {
         width: 100%;
+        max-width: 800px;
       }
     }
 
