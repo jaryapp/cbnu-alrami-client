@@ -9,7 +9,7 @@ const Dialog = styled.div`
   bottom: 0px;
   background-color: white;
   z-index: 1;
-  
+
   .header {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -28,8 +28,8 @@ const Dialog = styled.div`
 
     .arrow {
       position: absolute;
-      font-size: 2rem;
-      left: 2px;
+      font-size: 1.7rem;
+      left: 5px;
       top: 15px;
     }
   }

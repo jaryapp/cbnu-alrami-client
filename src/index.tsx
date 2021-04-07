@@ -9,6 +9,7 @@ import Notice from '@components/Notice'
 import Cafeteria from '@components/Cafeteria'
 import { client } from '@src/apollo'
 import { GlobalStyle } from '@src/assets/style/globalStyle'
+import Footer from '@components/shared/Footer'
 
 dayjs.locale('ko')
 
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Route path="/cafeteria" component={Cafeteria} />
         <Route path="/notice" component={Notice} />
       </Switch>
+      <Footer />
     </Router>
     <GlobalStyle />
   </ApolloProvider>,

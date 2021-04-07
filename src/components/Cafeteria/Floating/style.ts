@@ -4,8 +4,8 @@ import '@src/assets/style/__pallette.css'
 
 const Floating = styled.div`
   position: fixed;
-  bottom: 1.2rem;
-  right: 1.2rem;
+  bottom: 4.5rem;
+  right: 1rem;
   border-radius: 50%;
   width: 50px;
   height: 50px;
