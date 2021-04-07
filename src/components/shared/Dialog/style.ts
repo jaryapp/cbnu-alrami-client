@@ -13,7 +13,6 @@ const Dialog = styled.div`
 
   &.open {
     left: 0px;
-    right: 0px;
   }
 
   .header {
