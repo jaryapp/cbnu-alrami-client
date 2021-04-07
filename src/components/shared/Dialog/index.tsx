@@ -32,9 +32,9 @@ function Dialog({ title, ContentComponent }: DialogProps) {
       openCallback(openDialog)
     }, [openCallback, openDialog])
 
-    if (!open) return <></>
+    if (!open) return <StyledDialog></StyledDialog>
     return (
-      <StyledDialog>
+      <StyledDialog className="open">
         {title && (
           <div className="header">
             <BiChevronLeft className="arrow" onClick={e => closeDialog(e)} />

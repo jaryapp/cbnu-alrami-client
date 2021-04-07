@@ -4,11 +4,17 @@ import '@src/assets/style/__pallette.css'
 const Dialog = styled.div`
   position: fixed;
   top: 0px;
-  left: 0px;
-  right: 0px;
+  left: 100vw;
+  width: 100vw;
   bottom: 0px;
   background-color: white;
   z-index: 1;
+  transition: 0.2s;
+
+  &.open {
+    left: 0px;
+    right: 0px;
+  }
 
   .header {
     padding-top: 1rem;
