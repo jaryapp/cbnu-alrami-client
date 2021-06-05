@@ -189,4 +189,11 @@ export const GlobalStyle = createGlobalStyle`
     textarea:focus {
     outline: none;
     }
+
+
+  ::-webkit-scrollbar {
+    width: 0px !important;
+
+  }
+
 `

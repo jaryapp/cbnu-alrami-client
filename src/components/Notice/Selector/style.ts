@@ -9,12 +9,15 @@ const Selector = styled.ul`
   background-color: white;
 
   & > li {
+    font-size: 0.85rem;
     flex-shrink: 0;
     margin: 0.3em;
-    border-radius: 20px;
-    padding: 0.3em 0.5em;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 3px 9px;
-    color: var(--black-500);
+    border-radius: 1em;
+    padding: 0.8em 0.7em;
+    background-color: var(--notice-gray-100);
+    box-shadow: var(--menu-box-shadow);
+    color: var(--notice-gray-700);
+    cursor: pointer;
   }
 `
 
